@@ -1,0 +1,28 @@
+
+  .carousel {
+    position: relative;
+  }
+  
+  .carousel-inner {
+    display: flex;
+
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+  }
+ .btn {
+    background-color: #2ec4b6;
+ }
+  
+  .ice-cream {
+    margin-top: auto; /* Push ice cream images to the bottom */
+  }
+  p{
+    font-size: larger;
+  }
+  .container{
+    background-color: #ff9f1c;
+  }
+
+.btm-nav{
+    background-color: #ff9f1c; 
+}
