@@ -7,12 +7,14 @@ html, body {
 }
 
 .hero {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+    left: 0;
   background-color: #2ec4b6;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Ensures the hero section covers the entire viewport height */
+  height: 100vh; /* Ensures the hero section covers the entire viewport height */
   width: 100%;
   background-size: cover; /* Ensures background image covers the section */
   background-position: center; /* Center the background image */
@@ -21,6 +23,7 @@ html, body {
 .hero-overlay {
   position: absolute; /* Overlay should cover the entire hero section */
   top: 0;
+  
   left: 0;
   right: 0;
   bottom: 0;
@@ -35,7 +38,7 @@ html, body {
 }
 
 .img-responsive {
-  max-width: 100%;
+  max-width: 500px;
   height: auto;
   display: block;
   margin: 0 auto; /* Center horizontally */
