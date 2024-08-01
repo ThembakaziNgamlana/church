@@ -1,13 +1,13 @@
 .btn{
-    background-color: #2ec4b6 
+    background-color:#00bfff,
 }
 
 .hero{
-    background-color: #2ec4b6;
+    background: linear-gradient(to bottom right, #ff6f61, #00bfff, #001f3f);
 }
 
 .card {
-    background-color: #ff9f1c; 
+    background-color: #ff6f61; 
 }
 
 h1{
@@ -24,5 +24,10 @@ h1{
 }
 
 .label-text-alt{
-    color: white;
+    color: #007bff;
+   text-decoration: underline; 
+}
+
+.input{
+    background-color: white
 }
