@@ -9,13 +9,13 @@ html, body {
 .hero {
   position: fixed;
   bottom: 0;
-    left: 0;
-  background-color: #2ec4b6;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh; /* Ensures the hero section covers the entire viewport height */
   width: 100%;
+  background: linear-gradient(to bottom right, #ff6f61, #00bfff, #001f3f); /* Gradient with red, light blue, and navy */
   background-size: cover; /* Ensures background image covers the section */
   background-position: center; /* Center the background image */
 }
@@ -23,7 +23,6 @@ html, body {
 .hero-overlay {
   position: absolute; /* Overlay should cover the entire hero section */
   top: 0;
-  
   left: 0;
   right: 0;
   bottom: 0;
@@ -85,7 +84,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 90px; /* Adjust height as needed */
-  background-color: #ff9f1c; /* Background color of the toolbar */
+  background-color: #ff6f61; /* Red background color for the navbar */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -115,3 +114,4 @@ html, body {
 .btm-nav .active {
   color: #007bff; /* Color for the active button */
 }
+

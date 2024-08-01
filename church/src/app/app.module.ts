@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -8,11 +7,19 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { Routes } from '@angular/router';
+
+
+const routes: Routes = [
+  { path: '', component: LandingPageComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  // Add other routes here
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,  
+    LandingPageComponent ,
     HomePageComponent,
     SignUpComponent,
     SignInComponent,
