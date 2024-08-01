@@ -10,11 +10,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { Routes } from '@angular/router';
 
 
-const routes: Routes = [
-  { path: '', component: LandingPageComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  // Add other routes here
-];
 
 @NgModule({
   declarations: [
