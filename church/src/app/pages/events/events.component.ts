@@ -7,9 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent {
+
+
   constructor(private router: Router) {}
 
   navigateToSEvent1() {
     this.router.navigate(['/event1']);
   }
+
+  navigateToMEvent2() {
+    this.router.navigate(['/event2']);
+  }
+
 }

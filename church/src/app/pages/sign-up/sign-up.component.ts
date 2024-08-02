@@ -8,10 +8,18 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
 
+  isLoads: boolean = false;
 
   constructor(private router: Router) {}
 
-  navigateToSignIn() {
-    this.router.navigate(['/sign-in']);
-  }
+  startLoading(): void {
+    this.isLoads= true;
+
+    // Simulate a delay for loading (e.g., network request or other processing)
+    setTimeout(() => {
+      // After loading is done, navigate to the next page or perform an action
+      this.router.navigate(['/sign-in']);  // Update '/next-page' to your target route
+      this.isLoads = false;
+    }, 2000);  // Adjust the delay as needed
+}
 }

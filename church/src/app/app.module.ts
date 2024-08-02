@@ -9,6 +9,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EventsComponent } from './pages/events/events.component';
 import { Event1Component } from './pages/event1/event1.component';
+import { Event2Component } from './pages/event2/event2.component';
 
 
 
@@ -22,7 +23,8 @@ import { Event1Component } from './pages/event1/event1.component';
     SignInComponent,
     NavbarComponent,
     EventsComponent,
-    Event1Component
+    Event1Component,
+    Event2Component
   ],
   imports: [
     BrowserModule,

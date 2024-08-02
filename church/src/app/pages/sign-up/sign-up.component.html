@@ -36,9 +36,13 @@
           </label>
         </div>
         <div class="form-control mt-6">
-          <button class="btn btn-primary" (click)="navigateToSignIn()">Register</button>
+          <button class="btn btn-primary" (click)="startLoading()">Register</button>
         </div>
       </form>
     </div>
+      <!-- Loading Spinner -->
+      <div *ngIf="isLoads" class="loader-container">
+        <div class="loader"></div>
+      </div>
   </div>
 </div>
