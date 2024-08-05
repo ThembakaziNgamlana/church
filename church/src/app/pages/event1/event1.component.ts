@@ -9,7 +9,7 @@ export class Event1Component implements OnInit {
   images: string[] = [
     '/assets/IMG-20240618-WA0028.jpg',
     '/assets/IMG-20240618-WA0037.jpg',
-    '/assets/IMG-20240618-WA0050.jpg'
+    'assets/IMG-20240618-WA0050.jpg'
     // Add more image paths here
   ];
   currentIndex: number = 0;

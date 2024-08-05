@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   checkNavbarVisibility() {
     const currentRoute = this.router.url;
     // List of routes where the navbar should be hidden
-    const hiddenRoutes = ['/', '/sign-in', '/sign-up', '/events', '/event1', '/event2'];
+    const hiddenRoutes = ['/', '/sign-in', '/sign-up',   '/events', '/event1', '/event2'];
 
     // Update the visibility of the navbar based on the current route
     this.showNavbar = !hiddenRoutes.includes(currentRoute);

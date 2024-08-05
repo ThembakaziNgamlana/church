@@ -1,82 +1,22 @@
 <!-- events.component.html -->
 <div class="events-container p-4">
-    <h1 class="text-4xl font-bold text-gray-800 mb-6">Events</h1>
-  
-    <!-- Search and Filters Section -->
-    <div class="search-filters mb-4">
-      <input type="text" placeholder="Search events..." class="input input-bordered w-full mb-2" />
-      <button class="btn btn-secondary">Filter</button>
-    </div>
-  
-    <!-- Events List -->
-    <div class="events-grid">
-      <!-- Event Card Example -->
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Outdoor Donating</h2>
-        <p class="text-gray-600 mt-2">Date: april 10, 2024</p>
-        <p class="text-gray-600">Time: 12:00 PM</p>
-        <p class="text-gray-600">Location: Zult Sprit</p>
-        <p class="mt-4">As the church we were donating blackets and hanging out food to the people in need</p>
-        <button class="btn btn-primary mt-4" (click)="navigateToSEvent1()">View </button>
-      </div>
-      <!-- Repeat event cards for more events -->
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Children Dedication</h2>
-        <p class="text-gray-600 mt-2">Date: August 22, 2024</p>
-        <p class="text-gray-600">Time: 9:00 AM</p>
-        <p class="text-gray-600">Location: Church Hall</p>
-        <p class="mt-4">This was a children dedication having friends and family as a company.</p>
-        <button class="btn btn-primary mt-4" (click)="navigateToMEvent2()">View </button>
-      </div>
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Dedication of the church</h2>
-        <p class="text-gray-600 mt-2">Date: May 30, 2024</p>
-        <p class="text-gray-600">Time: 11:00 AM</p>
-        <p class="text-gray-600">Location: Church Hall</p>
-        <p class="mt-4">The church was given a original name as North-Riding Sda Church</p>
-        <button class="btn btn-primary mt-4">View </button>
-      </div>
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Event Title 4</h2>
-        <p class="text-gray-600 mt-2">Date: August 29, 2024</p>
-        <p class="text-gray-600">Time: 5:00 PM</p>
-        <p class="text-gray-600">Location: Church Hall</p>
-        <p class="mt-4">Description of the event goes here.</p>
-        <button class="btn btn-primary mt-4">View </button>
-      </div>
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Adventures Outing</h2>
-        <p class="text-gray-600 mt-2">Date:  29 August March, 2024</p>
-        <p class="text-gray-600">Time: 11:00 AM</p>
-        <p class="text-gray-600">Location: Johnannesburg Zoo</p>
-        <p class="mt-4">Adventures where exploring nature and animals</p>
-        <button class="btn btn-primary mt-4">View </button>
-      </div>
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Couples Outing</h2>
-        <p class="text-gray-600 mt-2">Date: 11 January, 2024</p>
-        <p class="text-gray-600">Time: 10:00 AM</p>
-        <p class="text-gray-600">Location: Kings Kloof Hiking Trail</p>
-        <p class="mt-4">The Couples were hiking outdoor explorimng nature.</p>
-        <button class="btn btn-primary mt-4">View </button>
-      </div>
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Womens Event</h2>
-        <p class="text-gray-600 mt-2">Date: August 19, 2024</p>
-        <p class="text-gray-600">Time: 10:00 AM</p>
-        <p class="text-gray-600">Location: Church Hall</p>
-        <p class="mt-4">Women were having lord supper and washing feet</p>
-        <button class="btn btn-primary mt-4">View </button>
-      </div>
-      <div class="event-card bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-gray-800">Church event</h2>
-        <p class="text-gray-600 mt-2">Date: May 29, 2024</p>
-        <p class="text-gray-600">Time: 1:00 PM</p>
-        <p class="text-gray-600">Location: Church Hall</p>
-        <p class="mt-4">The Church was having a lord supper and washing feet.</p>
-        <button class="btn btn-primary mt-4">View </button>
-      </div>
-      <!-- Add more event cards as needed -->
+  <h1 class="text-4xl font-bold text-gray-800 mb-6">Events</h1>
+
+  <!-- Search and Filters Section -->
+  <div class="search-filters mb-4">
+    <input type="text" placeholder="Search events..." class="input input-bordered w-full mb-2" />
+    <button class="btn btn-secondary" (click)="performSearch()">Search</button>
+  </div>
+
+  <!-- Events List -->
+  <div class="events-grid">
+    <div class="event-card bg-white p-4 rounded-lg shadow-md" *ngFor="let event of filteredEvents">
+      <h2 class="text-2xl font-semibold text-gray-800">{{ event.title }}</h2>
+      <p class="text-gray-600 mt-2">Date: {{ event.date }}</p>
+      <p class="text-gray-600">Time: {{ event.time }}</p>
+      <p class="text-gray-600">Location: {{ event.location }}</p>
+      <p class="mt-4">{{ event.description }}</p>
+      <button class="btn btn-primary mt-4" (click)="navigateToSEvent1()">View</button>
     </div>
   </div>
-  
+</div>
