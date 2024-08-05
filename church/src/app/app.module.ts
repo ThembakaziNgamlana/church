@@ -10,8 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { EventsComponent } from './pages/events/events.component';
 import { Event1Component } from './pages/event1/event1.component';
 import { Event2Component } from './pages/event2/event2.component';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +28,10 @@ import { Event2Component } from './pages/event2/event2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

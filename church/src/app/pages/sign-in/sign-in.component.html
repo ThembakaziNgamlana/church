@@ -2,42 +2,33 @@
   <div class="hero-content flex-col lg:flex-row-reverse items-center lg:items-start">
     <!-- Card Section -->
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-6 flex flex-col items-center lg:items-start">
-   
       <div class="flex items-center space-x-4 mb-4">
         <img src="/assets/photo.png" alt="Church Logo" class="w-25 h-25 object-contain">
-        
       </div>
-      <form class="w-full">
-       
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-full">
         <div class="form-control">
           <label class="label">
             <span class="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" class="input input-bordered" required />
+          <input formControlName="email" type="email" placeholder="email" class="input input-bordered" required />
         </div>
         <div class="form-control">
           <label class="label">
             <span class="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" class="input input-bordered" required />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Confirm Password</span>
-          </label>
-          <input type="password" placeholder="Confirm password" class="input input-bordered" required />
-          <label class="label">
-            <a href="#" class="label-text-alt link link-hover">Forgot password?</a>  <!-- Updated link style -->
-          </label>
+          <input formControlName="password" type="password" placeholder="password" class="input input-bordered" required />
         </div>
         <div class="form-control mt-6">
-          <button class="btn btn-primary" (click)="startLoading()">Login</button>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        <div *ngIf="isLoginFailed" class="text-red-500 mt-2">
+          {{ errorMessage }}
         </div>
       </form>
     </div>
-          <!-- Loading Spinner -->
-  <div *ngIf="isLoad" class="loader-container">
-    <div class="loader">Loading...</div>
-  </div>
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoad" class="loader-container">
+      <div class="loader">Loading...</div>
+    </div>
   </div>
 </div>
