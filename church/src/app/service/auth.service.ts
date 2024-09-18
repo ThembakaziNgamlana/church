@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { catchError, Observable, of, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -10,13 +10,19 @@ import { Observable, of } from 'rxjs';
 export class AuthService {
 
   private tokenKey = 'token'; // Key for localStorage where the token is stored
-  private apiUrlAuth = 'http://localhost:8080/api/v1/auth'; // Base URL for API endpoints in the environment.ts
+  private apiUrlAuth = 'http://localhost:8080/api/v12/auth'; // Base URL for API endpoints in the environment.ts
 
   constructor(private http: HttpClient, private router: Router) {}
 
   // Method to handle user registration
   register(data: { email: string, password: string, confirmPassword: string }): Observable<any> {
-    return this.http.post(`${this.apiUrlAuth}/register`, data);
+    return this.http.post(`${this.apiUrlAuth}/register`, data).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Registration failed', error);
+        // Handle specific error scenarios here
+        return of(null); // Rethrow the error after logging
+      })
+    );
   }
 
   // Method to handle user login

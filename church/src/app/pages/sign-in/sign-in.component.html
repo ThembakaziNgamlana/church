@@ -1,34 +1,51 @@
-<div class="hero bg-base-200 min-h-screen">
+<div class="hero bg-base-200 min-h-screen" style="background-image: url(assets/_.jpeg);">
   <div class="hero-content flex-col lg:flex-row-reverse items-center lg:items-start">
-    <!-- Card Section -->
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-6 flex flex-col items-center lg:items-start">
       <div class="flex items-center space-x-4 mb-4">
         <img src="/assets/photo.png" alt="Church Logo" class="w-25 h-25 object-contain">
       </div>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-full">
+      <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="w-full">
+
         <div class="form-control">
           <label class="label">
             <span class="label-text">Email</span>
           </label>
           <input formControlName="email" type="email" placeholder="email" class="input input-bordered" required />
+          <div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched" class="text-red-500">
+            Please enter a valid email.
+          </div>
         </div>
+
         <div class="form-control">
           <label class="label">
             <span class="label-text">Password</span>
           </label>
           <input formControlName="password" type="password" placeholder="password" class="input input-bordered" required />
+          <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="text-red-500">
+            Password must be at least 8 characters long and contain at least one number and one uppercase letter.
+          </div>
         </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Confirm Password</span>
+          </label>
+          <input formControlName="confirmPassword" type="password" placeholder="Confirm password" class="input input-bordered" required />
+          <div *ngIf="signInForm.errors?.passwordMismatch && signInForm.get('confirmPassword')?.touched" class="text-red-500">
+            Passwords must match.
+          </div>
+        </div>
+
         <div class="form-control mt-6">
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary" [disabled]="signInForm.invalid">Login</button>
         </div>
         <div *ngIf="isLoginFailed" class="text-red-500 mt-2">
           {{ errorMessage }}
         </div>
       </form>
     </div>
-    <!-- Loading Spinner -->
     <div *ngIf="isLoad" class="loader-container">
-      <div class="loader">Loading...</div>
+      <div class="loader"></div>
     </div>
   </div>
 </div>

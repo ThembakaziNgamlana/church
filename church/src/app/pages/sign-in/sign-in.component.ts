@@ -14,6 +14,9 @@ export class SignInComponent {
   loginForm!:FormGroup;
   isLoginFailed:boolean = false;
   errorMessage: string = '';
+signInForm: any;
+  isSignUpFailed: boolean | undefined;
+  passwordMatchValidator: any;
   
 
   constructor(private router: Router,
@@ -22,24 +25,36 @@ export class SignInComponent {
   ) {}
 
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
+    this.signInForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
-    });
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*[0-9])(?=.*[A-Z]).+$')
+      ]],
+      confirmPassword: ['', Validators.required]
+    }, { validator: this.passwordMatchValidator });
   }
 
+  passwordMatchValidators(form: FormGroup) {
+    const password = form.get('password')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { mismatch: true };
+  }
+
+
   onSubmit(): void {
-    if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      this.authService.login({ email, password }).subscribe(
+    if (this.signInForm.valid) {
+      const { email, password } = this.signInForm.value;
+      this.authService.register({ email, password, confirmPassword: this.signInForm.value.confirmPassword }).subscribe(
         response => {
-          this.authService.saveToken(response.token);
-          this.router.navigate(['/home-page']);
+          // Handle successful registration, e.g., navigate to login page
+          this.router.navigate(['/sign-in']);
         },
         error => {
           this.isLoginFailed = true;
-          this.errorMessage = 'Login failed. Please try again.';
-          console.error('Login failed', error);
+          this.errorMessage = 'Registration failed. Please try again.';
+          console.error('Registration failed', error);
         }
       );
     }

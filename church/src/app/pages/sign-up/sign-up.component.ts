@@ -21,12 +21,15 @@ export class SignUpComponent {
   ) {}
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
+      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]]
-    }, {
-      validator: this.passwordMatchValidator
-    });
+      password: ['', [
+        Validators.required, 
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*[0-9])(?=.*[A-Z]).+$')
+      ]],
+      confirmPassword: ['', Validators.required]
+    }, { validator: this.passwordMatchValidator });
   }
 
   // Custom validator to check if passwords match

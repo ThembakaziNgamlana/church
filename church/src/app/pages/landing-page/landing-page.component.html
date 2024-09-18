@@ -1,25 +1,19 @@
-<div class="hero">
-    <div class="hero-overlay bg-opacity-60"></div>
-  
-    <div class="hero-content text-neutral-content text-center">
-      <div class="max-w-md">
-
-        <img
-          src="/assets/photo.png"
-          alt="Church Image"
-          class="img-responsive center-image mb-6"
-          style="max-width: 120%; height: auto;"  />
-           <p class="py-6">
-          Welcome to the North-Riding Church app, your spiritual companion for a more connected and enriching faith journey. Our app provides easy access to sermons, community events, and prayer resources, all designed to deepen your spiritual experience and foster a sense of belonging.
-        </p>
-        <button class="btn btn-primary"  (click)="startLoading()">Get Started</button>
-      </div>
+ <div
+  class="hero min-h-screen"
+  style="background-image: url(assets/_.jpeg);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+      <p class="mb-5">
+        Welcome to the North-Riding Church app, your spiritual companion for a more connected and enriching faith journey. Our app provides easy access to sermons, community events, and prayer resources, all designed to deepen your spiritual experience and foster a sense of belonging.
+      </p>
+      <button class="btn btn-primary" (click)="startLoading()">Get Started</button>
     </div>
-      <!-- Loading Spinner -->
-  <div *ngIf="isLoading" class="loader-container">
+  </div>
+  <div *ngIf="isLoad" class="loader-container">
     <div class="loader">Loading...</div>
   </div>
-  </div>
+</div>
   
- 
-  
+

@@ -1,145 +1,145 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden; 
-  width: 100%;
+// html, body {
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   overflow: hidden; 
+//   width: 100%;
+// }
+
+// // .hero {
+ 
+// //   background-image:  url("https://pin.it/1Zy7LXDYv");;
+  
+// //   background-size: cover; /* Ensures background image covers the section */
+// //   background-position: center; /* Center the background image */
+// // }
+
+// .hero-overlay {
+//   position: absolute; /* Overlay should cover the entire hero section */
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+// }
+
+// .hero-content {
+//   position: relative; /* Ensure content is above the overlay */
+//   z-index: 1;
+//   color: white;
+//   text-align: center;
+// }
+
+// .img-responsive {
+//   max-width: 500px;
+//   height: auto;
+//   display: block;
+//   margin: 0 auto; /* Center horizontally */
+// }
+
+// .center-image {
+//   width: 50%;       /* Adjust width as needed */
+//   max-width: 300px; /* Adjust max-width as needed */
+//   display: block;
+//   margin: 0 auto;
+// }
+
+// .mb-6 {
+//   margin-bottom: 1.5rem; /* Adjust this value as needed */
+// }
+
+// .py-6 {
+//   color: white;
+//   padding-top: 1.5rem; /* Adjust padding to fit content spacing */
+//   padding-bottom: 1.5rem; /* Adjust padding to fit content spacing */
+// }
+
+// .mb-5 {
+//   color: white;
+//   margin-bottom: 1.25rem; /* Adjust margin to fit content spacing */
+// }
+
+// .btn {
+//   padding: 0.5rem 1rem;
+//   border: none;
+//   border-radius: 0.25rem;
+//   color: white;
+//   background-color: #007bff; /* Example primary color */
+//   cursor: pointer;
+// }
+
+// .btn-primary {
+//   background-color: #ff6f61;
+// }
+
+// .btm-nav {
+//   position: fixed;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 90px; /* Adjust height as needed */
+//   background-color: #ff6f61; /* Red background color for the navbar */
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   border-top: 1px solid #bb9f9f; /* Optional: border to distinguish the toolbar */
+//   z-index: 1000; /* Ensure it appears above other content */
+// }
+
+// .btm-nav button {
+//   background: none;
+//   border: none;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   cursor: pointer;
+// }
+.hero{
+  background-image: url("https://pin.it/2d0HI6VIu");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.hero {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Ensures the hero section covers the entire viewport height */
-  width: 100%;
-  background: linear-gradient(to bottom right, #ff6f61, #00bfff, #001f3f); /* Gradient with red, light blue, and navy */
-  background-size: cover; /* Ensures background image covers the section */
-  background-position: center; /* Center the background image */
-}
+// .btm-nav svg {
+//   height: 24px; /* Icon height */
+//   width: 24px; /* Icon width */
+// }
 
-.hero-overlay {
-  position: absolute; /* Overlay should cover the entire hero section */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-}
+// .btm-nav-label {
+//   font-size: 12px; /* Label font size */
+//   margin-top: 4px; /* Space between icon and label */
+// }
 
-.hero-content {
-  position: relative; /* Ensure content is above the overlay */
-  z-index: 1;
-  color: white;
-  text-align: center;
-}
+// .btm-nav .active {
+//   color: #ff6f61; /* Color for the active button */
+// }
 
-.img-responsive {
-  max-width: 500px;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Center horizontally */
-}
+// /* Loader Container */
+// .loader-container {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+//   z-index: 1000; /* Ensure it overlays other content */
+// }
 
-.center-image {
-  width: 50%;       /* Adjust width as needed */
-  max-width: 300px; /* Adjust max-width as needed */
-  display: block;
-  margin: 0 auto;
-}
+// /* Loading Spinner Styles */
+// .loader {
+//   border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey background */
+//   border-left: 4px solid #3498db; /* Blue spinner */
+//   border-radius: 50%;
+//   width: 40px;
+//   height: 40px;
+//   animation: spin 1s linear infinite;
+// }
 
-.mb-6 {
-  margin-bottom: 1.5rem; /* Adjust this value as needed */
-}
-
-.py-6 {
-  color: white;
-  padding-top: 1.5rem; /* Adjust padding to fit content spacing */
-  padding-bottom: 1.5rem; /* Adjust padding to fit content spacing */
-}
-
-.mb-5 {
-  color: white;
-  margin-bottom: 1.25rem; /* Adjust margin to fit content spacing */
-}
-
-.btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  color: white;
-  background-color: #007bff; /* Example primary color */
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: #ff6f61;
-}
-
-.btm-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 90px; /* Adjust height as needed */
-  background-color: #ff6f61; /* Red background color for the navbar */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid #bb9f9f; /* Optional: border to distinguish the toolbar */
-  z-index: 1000; /* Ensure it appears above other content */
-}
-
-.btm-nav button {
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-.btm-nav svg {
-  height: 24px; /* Icon height */
-  width: 24px; /* Icon width */
-}
-
-.btm-nav-label {
-  font-size: 12px; /* Label font size */
-  margin-top: 4px; /* Space between icon and label */
-}
-
-.btm-nav .active {
-  color: #ff6f61; /* Color for the active button */
-}
-
-/* Loader Container */
-.loader-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 1000; /* Ensure it overlays other content */
-}
-
-/* Loading Spinner Styles */
-.loader {
-  border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey background */
-  border-left: 4px solid #3498db; /* Blue spinner */
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+// @keyframes spin {
+//   0% { transform: rotate(0deg); }
+//   100% { transform: rotate(360deg); }
+// }
